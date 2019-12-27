@@ -1,0 +1,4 @@
+target/
+.idea/
+Odoo_CRM.iml
+test-output/
