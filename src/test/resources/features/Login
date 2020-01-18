@@ -1,0 +1,17 @@
+Feature: user login
+
+	#{color:#de350b} (*r) *User Story:* (*r){color}
+	#
+	#*As an authorized user, I should be able to l**ogin successfully.***
+	#
+	#{color:#de350b} (*r) *Acceptance Criteria: (*r)*{color}
+	#
+	#*1.* *Verify that pos-manager able to login successfully.*
+
+	@VAP11-119
+
+	Scenario: Pos-manager should be able login.
+		Scenario: Login as a posmanager
+		Given user is on login page
+		When the user enters the posmanager login information
+		Then user should be able to log in
