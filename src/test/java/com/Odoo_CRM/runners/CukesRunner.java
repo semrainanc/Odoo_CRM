@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         glue = "com/Odoo_CRM/step_definitions",
         dryRun = false
-        //tags = "@wip"
+        //tags = " @pos"
 )
 public class CukesRunner {
 }

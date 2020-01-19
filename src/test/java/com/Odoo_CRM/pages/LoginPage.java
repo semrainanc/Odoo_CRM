@@ -24,6 +24,9 @@ public class LoginPage {
     @FindBy(xpath = "//*[@type= 'submit']")
     public WebElement submit;
 
+    @FindBy(xpath = "//*[@id=\"wrapwrap\"]/main/div/form/input[1]")
+    public WebElement loginerormsg;
+
 
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);

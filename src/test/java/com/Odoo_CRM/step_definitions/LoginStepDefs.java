@@ -7,24 +7,31 @@ import com.Odoo_CRM.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.junit.Assert;
+
 
 public class LoginStepDefs {
 
     @Given("user is on login page")
     public void user_is_on_login_page() {
-        System.out.println("Opening the login page");
+        //System.out.println("Opening the login page");
         // Driver.get() --> this gets the webdriver
         // Driver.get()  === driver
         String url = ConfigurationReader.get("url");
         Driver.get().get(url);
     }
 
+    @Then("user should be able to log in")
+    public void user_should_be_able_to_log_in() {
 
+            String actualTitle = Driver.get().getTitle();
+        BrowserUtils.waitFor(3);
+            Assert.assertEquals("Odoo", actualTitle);
+        }
 
     @When("the user enters the posmanager login information")
     public void the_user_enters_the_posmanager_login_information() {
-        System.out.println("Entering posmanager login info");
+        //System.out.println("Entering posmanager login info");
 
         String sUsername = ConfigurationReader.get("posusername");
         String sPassword = ConfigurationReader.get("pospassword");
@@ -36,7 +43,7 @@ public class LoginStepDefs {
 
     @When("the user enters the eventscrmmanager login information")
     public void the_user_enters_the_eventscrmmanager_login_information() {
-        System.out.println("Entering eventscrmmanager login info");
+        //System.out.println("Entering eventscrmmanager login info");
 
         String sUsername = ConfigurationReader.get("eventsusername");
         String sPassword = ConfigurationReader.get("eventspassword");
@@ -48,7 +55,7 @@ public class LoginStepDefs {
 
     @When("the user enters the crmmanager login information")
     public void the_user_enters_the_crmmanager_login_information() {
-        System.out.println("Entering crmmanager login info");
+        // System.out.println("Entering crmmanager login info");
 
         String sUsername = ConfigurationReader.get("crmusername");
         String sPassword = ConfigurationReader.get("crmpassword");
@@ -56,12 +63,7 @@ public class LoginStepDefs {
         LoginPage loginPage = new LoginPage();
         loginPage.login(sUsername, sPassword);
 
+
     }
-
-
-
-
-
-
 
 }
